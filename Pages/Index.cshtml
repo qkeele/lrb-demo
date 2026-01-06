@@ -1,9 +1,97 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "LRB Demo";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Click the Search tab to begin.</h1>
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-3 fw-bold mb-3">LRB Demo</h1>
+        <p class="lead text-muted">AI-Powered Legislative Bill Search</p>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-lg-8 mx-auto">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h2 class="h4 mb-3">What is this?</h2>
+                    <p class="mb-0">
+                        This is a demonstration of an intelligent legislative measure searching system. 
+                        Instead of using complex database queries, you can search for bills using 
+                        natural language by typing what you're looking for. AI will understand 
+                        and find the relevant legislation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mb-5">
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="text-primary me-3" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                        <h3 class="h5 mb-0">AI Search</h3>
+                    </div>
+                    <p class="text-muted mb-3">
+                        Use natural language to search for bills. Try queries like:
+                    </p>
+                    <ul class="text-muted small">
+                        <li>"Bills about tourism introduced by Sen. Makoa."</li>
+                        <li>"Measures by Rep. Leilani that have been deferred."</li>
+                        <li>"All measures by Makoa or Kai."</li>
+                        <li>"All measures that have passed the third reading."</li>
+                    </ul>
+                    <a href="/Search" class="btn btn-primary mt-2">Try AI Search →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="text-success me-3" viewBox="0 0 16 16">
+                            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                            <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                        </svg>
+                        <h3 class="h5 mb-0">Browse Measures</h3>
+                    </div>
+                    <p class="text-muted mb-3">
+                        View all legislative measures with test information including:
+                    </p>
+                    <ul class="text-muted small">
+                        <li>Bill number and description</li>
+                        <li>Introducer and current status</li>
+                        <li>Committee assignments and reports</li>
+                        <li>Roll call votes and affected statutes</li>
+                    </ul>
+                    <a href="/Measures" class="btn btn-success mt-2">View All Measures →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card shadow-sm border-0 bg-light">
+                <div class="card-body p-4">
+                    <h3 class="h5 mb-3">How it works</h3>
+                    <ol class="mb-0 text-muted">
+                        <li class="mb-2">Type your search in plain English on the <strong>Search</strong> page</li>
+                        <li class="mb-2">OpenAI processes your query and extracts relevant filters (introducer, status, keywords, etc.)</li>
+                        <li class="mb-2">The system searches the database using those filters</li>
+                        <li>Results are displayed with all relevant bill information</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5 text-muted small">
+        <p>Built with ASP.NET Core, Entity Framework, Azure SQL, and OpenAI API</p>
+    </div>
 </div>

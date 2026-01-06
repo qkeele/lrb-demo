@@ -41,7 +41,7 @@ Keys:
 
 Each value MUST be an array of strings.
 Use empty arrays when nothing applies.
-No extra keys. Keep keywords to a minimum.
+No extra keys. Keep keywords to a minimum. Ignore name prefixes.
 """;
 
         var payload = new
