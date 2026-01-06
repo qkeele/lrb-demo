@@ -1,0 +1,35 @@
+@page
+@model LrbDemo.Pages.MeasuresModel
+
+<h1>Measures</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Measure</th>
+            <th>Description</th>
+            <th>Introducer</th>
+            <th>Committees</th>
+            <th>Committee Reports</th>
+            <th>Status</th>
+            <th>Votes</th>
+            <th>HRS Sections</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var m in Model.Measures)
+    {
+        <tr>
+            <td>@m.MeasureNumber</td>
+            <td>@m.Description</td>
+            <td>@m.Introducer</td>
+            <td>@m.CommitteeReferrals</td>
+            <td>@m.CommitteeReportNumbers</td>
+            <td>@m.CurrentStatus</td>
+            <td>@m.RollCallVotes</td>
+            <td>@m.HrsSectionsAffected</td>
+        </tr>
+    }
+    </tbody>
+</table>
+

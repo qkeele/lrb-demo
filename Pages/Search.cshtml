@@ -1,0 +1,51 @@
+@page
+@model LrbDemo.Pages.SearchModel
+
+<h1>AI Search</h1>
+
+<form method="post">
+    <input asp-for="UserQuery" style="width: 600px;" />
+    <button type="submit">Search</button>
+</form>
+
+@if (!string.IsNullOrWhiteSpace(Model.OpenAiRawJson))
+{
+    <h2>OpenAI Raw Output</h2>
+    <pre>@Model.OpenAiRawJson</pre>
+}
+
+@if (Model.Results?.Any() == true)
+{
+    <h2>Results</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Measure</th>
+                <th>Description</th>
+                <th>Introducer</th>
+                <th>Committees</th>
+                <th>Committee Reports</th>
+                <th>Status</th>
+                <th>Votes</th>
+                <th>HRS Sections</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var m in Model.Results)
+        {
+            <tr>
+                <td>@m.MeasureNumber</td>
+                <td>@m.Description</td>
+                <td>@m.Introducer</td>
+                <td>@m.CommitteeReferrals</td>
+                <td>@m.CommitteeReportNumbers</td>
+                <td>@m.CurrentStatus</td>
+                <td>@m.RollCallVotes</td>
+                <td>@m.HrsSectionsAffected</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
